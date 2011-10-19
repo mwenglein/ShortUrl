@@ -1,0 +1,29 @@
+<h1>Listing short_urls</h1>
+
+<table>
+  <tr>
+    <th>Long</th>
+    <th>Short</th>
+    <th>Visits</th>
+    <th>Lastvisit</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @short_urls.each do |short_url| %>
+  <tr>
+    <td><%= link_to short_url.long, short_url.long %></td>
+    <td><%= link_to url_for(:action => :resolve, :short => short_url.short, :only_path => false), :action => :resolve, :short => short_url.short, :only_path => false %></td>
+    <td><%= short_url.visits %></td>
+    <td><%= short_url.lastvisit %></td>
+    <td><%= link_to 'Show', short_url %></td>
+    <td><%= link_to 'Edit', edit_short_url_path(short_url) %></td>
+    <td><%= link_to 'Destroy', short_url, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Short url', new_short_url_path %>
