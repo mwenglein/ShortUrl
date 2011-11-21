@@ -51,6 +51,9 @@ class ShortUrlsController < ApplicationController
   # POST /short_urls
   # POST /short_urls.xml
   def create
+    if not params[:short_url][:long].include? "://"
+      params[:short_url][:long] = "http://" + params[:short_url][:long]
+    end
     @short_url = ShortUrl.first(:conditions => { :long => params[:short_url][:long] })
     @short_url ||= ShortUrl.new(params[:short_url])
 

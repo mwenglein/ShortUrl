@@ -11,6 +11,7 @@ class ShortUrl < ActiveRecord::Base
   
   def shorten
     self.short = bijective_encode(ShortUrl.count() + 1000)
+    self.short_full = 'http://localhost:3001/' + self.short
   end
 
   ALPHABET =

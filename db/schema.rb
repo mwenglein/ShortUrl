@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111019210547) do
+ActiveRecord::Schema.define(:version => 20111121231714) do
 
   create_table "short_urls", :force => true do |t|
     t.string   "long"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20111019210547) do
     t.datetime "lastvisit"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "short_full"
   end
 
 end

@@ -2,6 +2,11 @@
 
 <%= render 'form' %>
 
-<div id="result">
-  hello
-</div>
+<div id="result"/>
+
+<h1>Post from API</h1>
+
+<form action="/short_urls.xml" method="POST">
+  <input type="text" name="short_url[long]" size="30"/>
+  <input type="submit">
+</form>

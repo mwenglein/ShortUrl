@@ -4,6 +4,7 @@
   <tr>
     <th>Long</th>
     <th>Short</th>
+    <th>Short Full</th>
     <th>Visits</th>
     <th>Lastvisit</th>
     <th></th>
@@ -15,6 +16,7 @@
   <tr>
     <td><%= link_to short_url.long, short_url.long %></td>
     <td><%= link_to url_for(:action => :resolve, :short => short_url.short, :only_path => false), :action => :resolve, :short => short_url.short, :only_path => false %></td>
+    <td><%= short_url.short_full %></td>
     <td><%= short_url.visits %></td>
     <td><%= short_url.lastvisit %></td>
     <td><%= link_to 'Show', short_url %></td>
